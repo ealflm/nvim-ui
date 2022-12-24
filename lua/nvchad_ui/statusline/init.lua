@@ -12,9 +12,8 @@ return {
       modules.mode(),
       modules.fileInfo(),
       modules.git(),
+      modules.dapinfo(),
 
-      "%=",
-      modules.LSP_progress(),
       "%=",
 
       modules.LSP_Diagnostics(),

@@ -74,7 +74,19 @@ M.git = function()
   local removed = (git_status.removed and git_status.removed ~= 0) and ("  " .. git_status.removed) or ""
   local branch_name = "   " .. git_status.head .. " "
 
-  return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed
+  return "%#St_gitIcons#" .. branch_name .. added .. changed .. removed .. " "
+end
+
+M.dapinfo = function()
+  local result = ""
+  if (vim.g.dap_state == 1) then
+    result = "   starting..."
+  end
+  if (vim.g.dap_state == 2) then
+    result = "   app running"
+  end
+
+  return "%#St_gitIcons#" .. result
 end
 
 -- LSP STUFF
